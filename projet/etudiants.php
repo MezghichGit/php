@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,15 +20,23 @@ else{
 // script pour l'affichage des data depuis la base
 
 $res = $mysqli->query("SELECT * FROM etudiant");
+
+echo "<h3 align=center>Nombre de stagiaires : ". $res->num_rows ."</h3>";
 //var_dump($res);
 echo"<br/>";
+?>
+<table align="center" class="table" border="1"/>
+<tr><th>ID</th><th>Nom</th><th>Age</th></tr>
+<?php
 while ($row = $res->fetch_assoc()) {
-    echo " id = " . $row['id'] . "\n";
-    echo " nom = " . $row['nom'] . "\n";
-    echo " age = " . $row['age'] . "\n";
+    echo"<tr>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['nom'] . "</td>";
+        echo "<td>" . $row['age'] . "</td>";
 
-    echo"<br/>";
+    echo"</tr>";
 }
+echo"</table>";
 
 /*
 for($i=0; $i< $res->num_rows; $i++) {
