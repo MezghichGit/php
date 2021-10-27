@@ -13,21 +13,20 @@ include("connexion.php");
 
 // script pour l'affichage des data depuis la base
 
-$res = $mysqli->query("SELECT * FROM etudiant");
+$res = $mysqli->query("SELECT * FROM cours");
 
-echo "<h3 align=center>Nombre de stagiaires : ". $res->num_rows ."</h3>";
+echo "<h3 align=center>Nombre de cours de cours Dispo : ". $res->num_rows ."</h3>";
 //var_dump($res);
 echo"<br/>";
 ?>
-<h3>Pour visiter la liste des cours dispo cliquer <a class="btn btn-primary" href="cours.php">ici</a></h3> 
 <table align="center" class="table table-striped" border="1"/>
-<tr><th>ID</th><th>Nom</th><th>Age</th></tr>
+<tr><th>ID</th><th>Libélle</th><th>Volume horaire</th></tr>
 <?php
 while ($row = $res->fetch_assoc()) {
     echo"<tr>";
         echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['nom'] . "</td>";
-        echo "<td>" . $row['age'] . "</td>";
+        echo "<td>" . $row['libelle'] . "</td>";
+        echo "<td>" . $row['vh'] . "</td>";
 
     echo"</tr>";
 }
