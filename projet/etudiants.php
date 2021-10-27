@@ -30,7 +30,7 @@ echo"<br/>";
 ?>
 <h3>Pour visiter la liste des cours dispo cliquer <a class="btn btn-primary" href="cours.php">ici</a></h3> 
 <table align="center" class="table table-striped" border="1"/>
-<tr><th>ID</th><th>Nom</th><th>Age</th><th>Supprimer</th></tr>
+<tr><th>ID</th><th>Nom</th><th>Age</th><th>Modifier</th><th>Supprimer</th></tr>
 <?php
 while ($row = $res->fetch_assoc()) {
     echo"<tr>";
@@ -38,6 +38,7 @@ while ($row = $res->fetch_assoc()) {
     echo "<td>" . $row['nom'] . "</td>";
     echo "<td>" . $row['age'] . "</td>";
 ?>
+    <td><a class="btn btn-warning" href="update.php?id=<?php echo $row['id']; ?>&nom=<?php echo $row['nom']; ?>&age=<?php echo $row['age']; ?>">Modifier</a></td>
     <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Supprimer</a></td>
 <?php
     echo"</tr>";
