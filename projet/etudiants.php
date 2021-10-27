@@ -6,6 +6,15 @@
 
 <body>
  <h1 align="center">Bienvenue à notre école IPSSI</h1>
+<div class="row">
+<div class="col-6">
+
+</div>
+<div class="col-6" align="right">
+<a href="addEtudiant.html" class="btn btn-success">Ajouter</a> 
+</div>
+</div>
+
 <?php
 // script php pour se connecter à la base
 
@@ -25,9 +34,9 @@ echo"<br/>";
 <?php
 while ($row = $res->fetch_assoc()) {
     echo"<tr>";
-        echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['nom'] . "</td>";
-        echo "<td>" . $row['age'] . "</td>";
+    echo "<td>" . $row['id'] . "</td>";
+    echo "<td>" . $row['nom'] . "</td>";
+    echo "<td>" . $row['age'] . "</td>";
 
     echo"</tr>";
 }
