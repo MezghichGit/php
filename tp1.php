@@ -30,5 +30,33 @@ echo "<table border=1 align=center>
           <tr><th>Marque</th><th>Modele</th><th>Matricule</th></tr>
 <?php
        echo"<tr><td>".$tableau["Marque"]."</td><td>".$tableau["Modele"]."</td><td>".$tableau["Matricule"]."</td></tr></table>";
-     
+   
+       
+
+        echo "<h2 align=center>Tableau associatif à plusieurs ligne</h2>";
+
+
+        // STEP 1 : Déclaration d'un tableau associatif
+        $tab=array(
+            array("ID"=>"1","Libelle"=>"Javascript","VH"=>"16"),
+            array("ID"=>"2","Libelle"=>"PHP","VH"=>"14"),
+            array("ID"=>"3","Libelle"=>"Ajax","VH"=>"2"),
+            array("ID"=>"4","Libelle"=>"Bootstrap","VH"=>"6")
+        );
+
+        // STEP 2 : Itération et affichage du tableau
+        echo "<table border=1 align=center>
+          <tr><th>ID</th><th>Libelle</th><th>VH</th></tr>";
+          
+          for($i=0;$i<count($tab); $i++)
+          {
+              echo"<tr>";
+                        echo"<td>". $tab[$i]["ID"]."</td>";
+                        echo"<td>". $tab[$i]["Libelle"]."</td>";
+                        echo"<td>". $tab[$i]["VH"]."</td>";
+              echo"</tr>";
+          }
+
+        echo "</table>";
+
 ?>
