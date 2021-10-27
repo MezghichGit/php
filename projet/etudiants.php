@@ -17,6 +17,25 @@ else{
 }
 
 // script pour l'affichage des data depuis la base
+
+$res = $mysqli->query("SELECT * FROM etudiant");
+//var_dump($res);
+echo"<br/>";
+while ($row = $res->fetch_assoc()) {
+    echo " id = " . $row['id'] . "\n";
+    echo " nom = " . $row['nom'] . "\n";
+    echo " age = " . $row['age'] . "\n";
+
+    echo"<br/>";
+}
+
+/*
+for($i=0; $i< $res->num_rows; $i++) {
+
+    $row = $res[$i]->fetch_assoc();
+    echo "id = " . $row['id'] . "\n";
+}*/
+
 ?>
 </body>
 </html>
