@@ -48,7 +48,7 @@ echo "<table border=1 align=center>
         echo "<table border=1 align=center>
           <tr><th>ID</th><th>Libelle</th><th>VH</th></tr>";
           
-          for($i=0;$i<count($tab); $i++)
+          for($i=0;$i<count($tab);$i++)
           {
               echo"<tr>";
                         echo"<td>". $tab[$i]["ID"]."</td>";
