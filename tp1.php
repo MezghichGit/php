@@ -38,15 +38,15 @@ echo "<table border=1 align=center>
 
         // STEP 1 : Déclaration d'un tableau associatif
         $tab=array(
-            array("ID"=>"1","Libelle"=>"Javascript","VH"=>"16"),
-            array("ID"=>"2","Libelle"=>"PHP","VH"=>"14"),
-            array("ID"=>"3","Libelle"=>"Ajax","VH"=>"2"),
-            array("ID"=>"4","Libelle"=>"Bootstrap","VH"=>"6")
+            array("ID"=>"1","Libelle"=>"Javascript","VH"=>"16","Formateur"=>"Amine","Période"=>"Janvier 2022"),
+            array("ID"=>"2","Libelle"=>"PHP","VH"=>"14","Formateur"=>"Mezghich","Période"=>"Mars 2022"),
+            array("ID"=>"3","Libelle"=>"Ajax","VH"=>"2","Formateur"=>"Alex","Période"=>"Avril 2022"),
+            array("ID"=>"4","Libelle"=>"Bootstrap","VH"=>"6","Formateur"=>"Jean","Période"=>"Mai 2022")
         );
 
         // STEP 2 : Itération et affichage du tableau
         echo "<table border=1 align=center>
-          <tr><th>ID</th><th>Libelle</th><th>VH</th></tr>";
+          <tr><th>ID</th><th>Libelle</th><th>VH</th><th>Détail</th></tr>";
           
           for($i=0;$i<count($tab);$i++)
           {
@@ -54,6 +54,9 @@ echo "<table border=1 align=center>
                         echo"<td>". $tab[$i]["ID"]."</td>";
                         echo"<td>". $tab[$i]["Libelle"]."</td>";
                         echo"<td>". $tab[$i]["VH"]."</td>";
+                       ?>
+                      <td><a href="detailsCours.php?num=<?php echo $tab[$i]["ID"];?>&titre=<?php echo $tab[$i]["Libelle"];?>&vh=<?php echo $tab[$i]["VH"];?>&periode=<?php echo $tab[$i]["Période"];?>&formateur=<?php echo $tab[$i]["Formateur"];?>">Cliquer</a></td>
+                       <?php
               echo"</tr>";
           }
 
