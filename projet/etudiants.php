@@ -30,14 +30,16 @@ echo"<br/>";
 ?>
 <h3>Pour visiter la liste des cours dispo cliquer <a class="btn btn-primary" href="cours.php">ici</a></h3> 
 <table align="center" class="table table-striped" border="1"/>
-<tr><th>ID</th><th>Nom</th><th>Age</th></tr>
+<tr><th>ID</th><th>Nom</th><th>Age</th><th>Supprimer</th></tr>
 <?php
 while ($row = $res->fetch_assoc()) {
     echo"<tr>";
     echo "<td>" . $row['id'] . "</td>";
     echo "<td>" . $row['nom'] . "</td>";
     echo "<td>" . $row['age'] . "</td>";
-
+?>
+    <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Supprimer</a></td>
+<?php
     echo"</tr>";
 }
 echo"</table>";
