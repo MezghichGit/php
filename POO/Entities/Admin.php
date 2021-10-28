@@ -25,6 +25,40 @@ class Admin{
 
     }
 
+    function deleteCours($id)
+    {
+
+        include("connexion.php");
+        $res = $mysqli->query("delete from cours where id ='".$id."'");
+        if($res)
+        echo "<br/>Suppression réussie";
+
+    }
+
+    function displayAllCourses()
+    {
+
+        include("connexion.php");
+        $res = $mysqli->query("SELECT * FROM cours");
+        if($res)
+        echo "<h3 align=center>Nombre de Cours : ". $res->num_rows ."</h3>";
+        echo"<br/>";
+        ?>
+        <table align="center" class="table table-striped" border="1"/>
+        <tr><th>ID</th><th>Libelle</th><th>VH</th>
+        <?php
+        while ($row = $res->fetch_assoc()) {
+            echo"<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['libelle'] . "</td>";
+            echo "<td>" . $row['vh'] . "</td>"; ?>
+        <?php
+            echo"</tr>";
+        }
+        echo"</table>";
+
+    }
+
     /**
      * Get the value of nom
      */ 
