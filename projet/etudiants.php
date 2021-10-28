@@ -1,7 +1,7 @@
 
 <?php
 
-session_start();
+session_start();  // récupération de la variable globale $_SESSION
 
 if (isset($_SESSION['login'])) { ?>
     <html>
@@ -22,7 +22,7 @@ if (isset($_SESSION['login'])) { ?>
     
         </div>
         <div class="col-6" align="right">
-        <a href="addEtudiant.html" class="btn btn-success">Ajouter</a> 
+        <a href="addEtudiant.php" class="btn btn-success">Ajouter</a> 
         </div>
         </div>
     

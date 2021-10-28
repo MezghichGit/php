@@ -1,3 +1,9 @@
+<?php
+
+session_start();  // récupération de la variable globale $_SESSION
+
+if (isset($_SESSION['login'])) { ?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -5,6 +11,10 @@
 </head>
 
 <body>
+<div class="row" style="margin-left:1%; margin-right:1%">
+            <div class="col-6" align="left">Bienvenue <?php echo $_SESSION["nom"]?>   </div>
+            <div class="col-6" align="right"><?php echo $_SESSION["login"]?> | <a href='logout.php'>Déconnexion</a></div>
+        </div>
  <h1 align="center">Bienvenue à notre école IPSSI</h1>
 
  <h4 align="center">Pour ajouter un étudiant, veuiller remplir le formulaire ci-après:</h4>
@@ -28,3 +38,11 @@
  </form>
 </body>
 </html>
+<?php
+} else {
+         echo "<script>
+        alert('Vous n êtes pas authentifié!');
+        window.location.href='login.html';  
+        </script>";
+     }
+ ?> 
