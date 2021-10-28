@@ -1,8 +1,5 @@
-
 <?php
-
 session_start();  // récupération de la variable globale $_SESSION
-
 if (isset($_SESSION['login'])) { ?>
     <html>
     <head>
